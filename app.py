@@ -18,4 +18,5 @@ class MonSiteWeb(object):
             return 'Veuillez svp fournir votre nom <a href="/">ici</a>.'
     salutations.exposed = True
 
-cherrypy.quickstart(MonSiteWeb(), config = "tutoriel.conf")
+cherrypy.config.update({'server.socket_host': '0.0.0.0', 'server.socket_port': 10000})
+cherrypy.quickstart(MonSiteWeb())
